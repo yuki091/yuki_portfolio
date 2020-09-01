@@ -21,8 +21,8 @@
     <div class="card">
       <div class="card__header">
         <div class="card__image">
-          <img src="{{ asset('storage/'.$cloth->image) }}" width="350px" height="350px">
-          <!-- <img src="data:image/png;base64,{{ $cloth->image }}" width="350px" height="350px"> -->
+          <!-- <img src="{{ asset('storage/'.$cloth->image) }}" width="350px" height="350px"> -->
+          <img src="data:image/png;base64,{{ $cloth->image }}" width="350px" height="350px">
         </div>
       </div>
       <div class="card__body">
