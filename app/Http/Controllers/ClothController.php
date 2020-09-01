@@ -66,7 +66,7 @@ class ClothController extends Controller
         $cloth->image = $image;
         $cloth->save();
 
-        return redirect("home");
+        return redirect("/home");
     }
     public function destroy($id)
     {
