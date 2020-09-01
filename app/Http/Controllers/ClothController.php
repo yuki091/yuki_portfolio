@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Storage;
 use App\User;
 use App\Cloth;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
    
 class ClothController extends Controller
 {
@@ -31,15 +31,15 @@ class ClothController extends Controller
         //  $image = $request->file('image')->getClientOriginalName();;
         //  $request->file('image')->storeAs('public', $image);
         // $request->file('filename')->storeAs('public', $filename);
-        // $clothes->cloth_filename = $filename;
-        // $image = base64_encode(file_get_contents($request->image->getRealPath()));
         $clothes = new Cloth;
-        $clothes->image = base64_encode(file_get_contents($request->image));
+        $uploadImg = $clothes->image = $request->file('image');
         $clothes->category_name = $request->category_name;
         $clothes->brand_name = $request->brand_name;
         $clothes->memo = $request->memo;
-        $clothes->image = $image;
+        // $clothes->image = $image;
         $clothes->user_id = $request->user()->id;
+        $path = Storage::disk('s3')->putFile('/', $uploadImg, 'public');
+        $clothes->image = Storage::disk('s3')->url($path);
         $clothes->save();
 
         return redirect('/home');

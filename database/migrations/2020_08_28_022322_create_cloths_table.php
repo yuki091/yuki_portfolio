@@ -19,7 +19,7 @@ class CreateClothsTable extends Migration
             $table->string('category_name');
             $table->string('brand_name');
             $table->string('memo');
-            $table->longText('image');
+            $table->string('image');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });
