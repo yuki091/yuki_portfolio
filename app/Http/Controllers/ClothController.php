@@ -28,9 +28,7 @@ class ClothController extends Controller
     }
     public function store(Request $request)
     {
-        //  $image = $request->file('image')->getClientOriginalName();;
-        //  $request->file('image')->storeAs('public', $image);
-        // $request->file('filename')->storeAs('public', $filename);
+   
         $clothes = new Cloth;
         $uploadImg = $clothes->image = $request->file('image');
         $clothes->category_name = $request->category_name;
@@ -58,7 +56,6 @@ class ClothController extends Controller
     {
         $cloth = Cloth::find($id);
         $filename = $request->file('filename')->getClientOriginalName();;
-        // $image = base64_encode(file_get_contents($request->image->getRealPath()));
         $request->file('image')->storeAs('public', $image);
         $cloth->category_name = $request->category_name;
         $cloth->brand_name = $request->brand_name;
