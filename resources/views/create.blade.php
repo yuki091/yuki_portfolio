@@ -77,6 +77,7 @@ margin-top: 30px;
 width: 60%;
 padding: 10px;
 color: black;
+
 }
 button {
 width: 100px;

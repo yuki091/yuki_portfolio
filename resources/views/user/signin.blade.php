@@ -67,7 +67,7 @@ width: 350px;
 background: ;
 border-radius: 5px;
 padding: 20px;
-box-shadow: 0 0 8px rgba(0, 0, 0, .16);
+/* box-shadow: 0 0 8px rgba(0, 0, 0, .16); */
 }
 input {
 margin-top: 15px;
@@ -84,9 +84,11 @@ button {
 width: 100px;
 text-align: center;
 padding: 8px 0 10px;
-background-color: #80cbc4;
-border-radius: 25px;
+background-color: #26a69a;
+border-radius: 10px;
 cursor: pointer;
 margin-top: 15px;
+color: white;
+
 }
 </style>
