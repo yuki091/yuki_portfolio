@@ -38,8 +38,7 @@
           {{ csrf_field() }}
           @method('DELETE')
           <p class="card__button">
-            <input type="submit" class="button -compact" value="削除">
-            <!-- <a type="submit" class="button -compact">削除</a> -->
+            <input type="submit" class="button -compact">
           </p>
         </form>
       </div>
