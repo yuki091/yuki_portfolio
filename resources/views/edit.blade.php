@@ -14,11 +14,10 @@
           <a href="/home">Home</a>
         </div>
     </div>
-  <!-- <img src="{{ asset('storage/'.$cloth->cloth_filename) }}" width="350px" height="350px"> -->
     <form action="/home/{{$cloth->id}}" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
     @method('PUT')
-        <input type="file" name="filename"><br>
+        <input type="file" name="iamge"><br>
         <label>カテゴリー</label>
         <input type="text" name="category_name" value="{{$cloth->category_name}}"><br>
         <label>ブランド</label>

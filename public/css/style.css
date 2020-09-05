@@ -79,7 +79,7 @@ margin-left: 30px;
 .button.-compact:focus {
   background-color: #80cbc4;
 }
-/* form input{
+.input{
   border-top: 1px solid #ddd;
   padding: 1rem;
   margin-top: .5rem;
@@ -89,7 +89,8 @@ margin-left: 30px;
   text-decoration: none;
   transition: background-color .3s ease-in-out;
   cursor: pointer;
-} */
+  background-color: #26a69a;
+} 
 @media screen and (max-width:480px)
 {
     .l-wrapper {

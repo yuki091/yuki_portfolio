@@ -23,7 +23,6 @@
       <div class="card__header">
         <div class="card__image">
           <img src="{{ $cloth->image }}" width="350px" height="350px">
-          <!-- <img src="data:image/png;base64,{{ $cloth->image }}" width="350px" height="350px"> -->
         </div>
       </div>
       <div class="card__body">
@@ -37,9 +36,9 @@
         <form action="/home/{{$cloth->id}}" method="post">
           {{ csrf_field() }}
           @method('DELETE')
-          <p class="card__button">
-            <input type="submit" class="button -compact">
-          </p>
+          <div class="card__button">
+            <input type="submit" class="button -compact" value="削除">
+          </div>
         </form>
       </div>
     </div>

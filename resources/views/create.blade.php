@@ -19,7 +19,7 @@
       {{ csrf_field() }}
       <input type="file" name="image" /><br>
       <label>カテゴリー</label>
-      <input id="image" type="text" name="category_name"/><br>
+      <input id="text" type="text" name="category_name"/><br>
       <label>ブランド </label>
       <input type="text" name="brand_name"><br>
       <label>メモ </label>

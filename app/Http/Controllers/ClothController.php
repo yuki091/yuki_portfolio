@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Storage;
    
 class ClothController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth')->except(['index']);
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index']);
+    }
 
     public function index()
     {
@@ -34,7 +34,6 @@ class ClothController extends Controller
         $clothes->category_name = $request->category_name;
         $clothes->brand_name = $request->brand_name;
         $clothes->memo = $request->memo;
-        // $clothes->image = $image;
         $clothes->user_id = $request->user()->id;
         $path = Storage::disk('s3')->putFile('/', $uploadImg, 'public');
         $clothes->image = Storage::disk('s3')->url($path);
@@ -55,12 +54,17 @@ class ClothController extends Controller
     public function update(Request $request, $id)
     {
         $cloth = Cloth::find($id);
-        $filename = $request->file('filename')->getClientOriginalName();;
-        $request->file('image')->storeAs('public', $image);
+        // $iamge = $request->file('image')->getClientOriginalName();
+        // $request->file('image')->storeAs('public', $image);
+        // $cloth->user_id = $request->user()->id;
+        // $cloth->image = $image;
+        
+        $image = $request->file('image');
         $cloth->category_name = $request->category_name;
         $cloth->brand_name = $request->brand_name;
         $cloth->memo = $request->memo;
-        $cloth->image = $image;
+        $path = Storage::disk('s3')->putFile('/murayuki', $image, 'public');
+        $cloth->image = Storage::disk('s3')->url($path);
         $cloth->save();
 
         return redirect("/home");
