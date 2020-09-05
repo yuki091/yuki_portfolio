@@ -17,7 +17,7 @@
     <form action="/home/{{$cloth->id}}" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
     @method('PUT')
-        <input type="file" name="iamge"><br>
+        <input type="file" name="image"><br>
         <label>カテゴリー</label>
         <input type="text" name="category_name" value="{{$cloth->category_name}}"><br>
         <label>ブランド</label>

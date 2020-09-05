@@ -63,7 +63,7 @@ class ClothController extends Controller
         $cloth->category_name = $request->category_name;
         $cloth->brand_name = $request->brand_name;
         $cloth->memo = $request->memo;
-        $path = Storage::disk('s3')->putFile('/murayuki', $image, 'public');
+        $path = Storage::disk('s3')->putFile('/', $image, 'public');
         $cloth->image = Storage::disk('s3')->url($path);
         $cloth->save();
 
