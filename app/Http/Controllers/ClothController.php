@@ -54,11 +54,6 @@ class ClothController extends Controller
     public function update(Request $request, $id)
     {
         $cloth = Cloth::find($id);
-        // $iamge = $request->file('image')->getClientOriginalName();
-        // $request->file('image')->storeAs('public', $image);
-        // $cloth->user_id = $request->user()->id;
-        // $cloth->image = $image;
-        
         $image = $request->file('image');
         $cloth->category_name = $request->category_name;
         $cloth->brand_name = $request->brand_name;
